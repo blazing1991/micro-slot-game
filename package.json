@@ -16,7 +16,8 @@
   "homepage": "https://github.com/blazing1991/micro-slot-game",
   "dependencies": {
     "gsap": "^3.10.4",
-    "pixi.js": "^6.5.1"
+    "pixi.js": "^6.5.1",
+    "screenfull": "^6.0.2"
   },
   "devDependencies": {
     "webpack": "^5.74.0",

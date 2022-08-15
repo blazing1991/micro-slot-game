@@ -1,8 +1,15 @@
 import config from "./config";
+import screenfull from 'screenfull';
 
 export class Utils {
     static alignHorizontally(displayObject) {
         displayObject.x = config.applicationResolution.width / 2 - displayObject.width / 2;
+    }
+
+    static enterFullScreenOnMobile() {
+        if (screenfull.isEnabled && navigator.userAgent.includes('Mobile')) {
+            screenfull.request();
+        }
     }
 
     // copied from https://github.com/kittykatattack/scaleToWindow

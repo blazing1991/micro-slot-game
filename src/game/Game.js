@@ -22,7 +22,13 @@ export class Game {
 
     createPixiApplication() {
         const {width, height} = config.applicationResolution;
-        const app = new PIXI.Application({width, height, backgroundColor: config.colors.backgroundColor});
+        const app = new PIXI.Application({width, height});
+        const background = new PIXI.Graphics();
+
+        background.beginFill(config.colors.backgroundColor);
+        background.drawRect(0, 0, width, height);
+        app.stage.interactive = true;
+        app.stage.addChild(background);
 
         document.getElementById('applicationContainer').appendChild(app.view);
 
@@ -34,6 +40,9 @@ export class Game {
             Utils.scaleToWindow(this.pixiApplication.renderer.view);
         });
         this.ui.on(GameEvents.spinButtonClicked, this.onSpinButtonClicked.bind(this));
+
+        this.pixiApplication.stage.on('click', Utils.enterFullScreenOnMobile);
+        this.pixiApplication.stage.on('tap', Utils.enterFullScreenOnMobile);
     }
 
     onSpinButtonClicked() {
