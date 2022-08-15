@@ -22,7 +22,7 @@ export class Game {
 
     createPixiApplication() {
         const {width, height} = config.applicationResolution;
-        const app = new PIXI.Application({width, height, backgroundColor: 0x1099bb});
+        const app = new PIXI.Application({width, height, backgroundColor: config.colors.backgroundColor});
 
         document.getElementById('applicationContainer').appendChild(app.view);
 

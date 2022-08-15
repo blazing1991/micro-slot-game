@@ -8,9 +8,10 @@ export class Reels extends PIXI.Container {
         super();
         this.pixiApplication = pixiApplication;
         this.winLinesContainer = new PIXI.Container();
+        this.reelsContainer = new PIXI.Container();
         this.visible = false;
         this.reels = [];
-        this.addChild(this.winLinesContainer);
+        this.addChild(this.reelsContainer,this.winLinesContainer);
         this.pixiApplication.stage.addChild(this);
     }
 
@@ -20,7 +21,7 @@ export class Reels extends PIXI.Container {
 
             reel.x = (config.reelContainer.width + config.betweenReels) * i;
             this.reels.push(reel);
-            this.addChild(reel);
+            this.reelsContainer.addChild(reel);
         }
         Utils.alignHorizontally(this);
         this.y = config.reelsContainer.y;
@@ -57,7 +58,7 @@ export class Reels extends PIXI.Container {
     createReelBackground() {
         const reelBackground = new PIXI.Graphics();
 
-        reelBackground.beginFill(0x000000, 0.4);
+        reelBackground.beginFill(config.colors.reelBack, 0.7);
         reelBackground.drawRect(0, 0, config.reelContainer.width, config.reelContainer.height);
         reelBackground.endFill();
 
@@ -70,7 +71,7 @@ export class Reels extends PIXI.Container {
             const payLine = config.payLines[winData.payLineIndex];
             const line = new PIXI.Graphics();
 
-            line.lineStyle(4, 0xFFFFFF, 0.2);
+            line.lineStyle(5, config.colors.winLine, 0.4);
 
             payLine.forEach((symbolIndex, reelIndex) => {
                 const reel = this.reels[reelIndex];

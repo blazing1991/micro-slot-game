@@ -88,5 +88,10 @@ export default {
     },
     payLinesField: {
         y: 605
+    },
+    colors: {
+        backgroundColor: 0x8CD6FB,
+        reelBack: 0xFFFFFF,
+        winLine: 0xFBF251,
     }
 }

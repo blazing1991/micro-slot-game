@@ -1,0 +1,1 @@
+Game can be played on https://blazing1991.github.io/micro-slot-game/
