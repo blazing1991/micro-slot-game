@@ -13,7 +13,6 @@ export class Utils {
         //Figure out the scale amount on each axis
         scaleX = window.visualViewport.width / canvas.offsetWidth;
         scaleY = window.visualViewport.height / canvas.offsetHeight;
-        console.log("WP:" + window.visualViewport.width)
 
         //Scale the canvas based on whichever value is less: `scaleX` or `scaleY`
         scale = Math.min(scaleX, scaleY);

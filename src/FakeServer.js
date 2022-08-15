@@ -16,11 +16,11 @@ export class FakeServer {
     getSpinResponse() {
         const stopPosition = this.getStopPosition();
         const symbolsMatrix = this.getSymbolsMatrix(stopPosition);
-        = [["hv3", "hv3", "hv3"],
-        ["hv3", "hv3", "hv3"],
-        ["hv3", "hv3", "hv3"],
-        ["hv3", "hv3", "hv3"],
-        ["hv3", "hv3", "hv3"]];
+        // = [["hv3", "hv3", "hv3"],
+        // ["hv3", "hv3", "hv3"],
+        // ["hv3", "hv3", "hv3"],
+        // ["hv3", "hv3", "hv3"],
+        // ["hv3", "hv3", "hv3"]];
         const winsData = this.getWinsData(symbolsMatrix);
         const totalWin = this.calculateWin(winsData);
         const balance = this.updateBalance(config.initialBet, totalWin);
